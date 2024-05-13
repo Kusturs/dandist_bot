@@ -204,7 +204,7 @@ async def check_reviews(callback: CallbackQuery) -> None:
 		await callback.answer()
 		await callback.message.edit_text(text = formatted_text, reply_markup = kb.scroll_reviews)
 	except NoResultFound:
-		await callback.answer("Отзывов пока нет. Вы можете оставить свой отзыв!")
+		await callback.answer("Отзывов пока нет, но вы можете это исправить!")
 
 
 @router.callback_query(F.data == 'next_review')
