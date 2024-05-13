@@ -6,8 +6,10 @@ from aiogram.fsm.state import StatesGroup, State
 from aiogram.fsm.context import FSMContext
 
 import app.keyboords as kb
-
 import app.database.requests as rq
+
+from sqlalchemy.orm.exc import NoResultFound
+
 
 router = Router()
 review_state = rq.ReviewState()
@@ -197,9 +199,12 @@ async def set_data(message: Message, state: FSMContext) -> None:
 
 @router.callback_query(F.data == 'reviews')
 async def check_reviews(callback: CallbackQuery) -> None:
-	formatted_text = await review_state.get_review()
-	await callback.answer()
-	await callback.message.edit_text(text = formatted_text, reply_markup = kb.scroll_reviews)
+	try:
+		formatted_text = await review_state.get_review()
+		await callback.answer()
+		await callback.message.edit_text(text = formatted_text, reply_markup = kb.scroll_reviews)
+	except NoResultFound:
+		await callback.answer("Отзывов пока нет. Вы можете оставить свой отзыв!")
 
 
 @router.callback_query(F.data == 'next_review')

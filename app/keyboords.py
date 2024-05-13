@@ -11,7 +11,8 @@ menu_service = InlineKeyboardMarkup(
 		[InlineKeyboardButton(text = 'Услуги', callback_data = 'services')],
 		[InlineKeyboardButton(text = 'Записаться', url = 'https://t.me/Aeto_y')],
 		[InlineKeyboardButton(text = 'Оставить отзыв', callback_data = 'feedback')],
-		[InlineKeyboardButton(text = "Отзывы", callback_data = "reviews")]]
+		[InlineKeyboardButton(text = "Отзывы", callback_data = "reviews")]
+	]
 )
 
 back = InlineKeyboardMarkup(inline_keyboard = [[InlineKeyboardButton(text = 'Назад', callback_data = 'back')]])
@@ -22,7 +23,8 @@ service_buttons = InlineKeyboardMarkup(
 		[InlineKeyboardButton(text = 'Лечение кариеса', callback_data = 'caries treatment')],
 		[InlineKeyboardButton(text = 'Отбеливание зубов', callback_data = 'teeth whitening')],
 		[InlineKeyboardButton(text = 'Протезирование', callback_data = 'prosthetics')],
-		[InlineKeyboardButton(text = 'Назад', callback_data = 'menu services')]]
+		[InlineKeyboardButton(text = 'Назад', callback_data = 'menu services')]
+	]
 )
 
 whitening_menu = InlineKeyboardMarkup(
@@ -41,7 +43,8 @@ prosthetic_menu = InlineKeyboardMarkup(
 	inline_keyboard = [
 		[InlineKeyboardButton(text = 'коронок и мостовидных протезов', callback_data = 'pros_1')],
 		[InlineKeyboardButton(text = 'съёмных конструкций', callback_data = 'pros_2')],
-		[InlineKeyboardButton(text = 'Назад', callback_data = 'back')]]
+		[InlineKeyboardButton(text = 'Назад', callback_data = 'back')]
+	]
 )
 
 back_to_prosthetic_menu = InlineKeyboardMarkup(
